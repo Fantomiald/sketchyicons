@@ -56,8 +56,12 @@ jobs:
       - name: bundle size
         run: pnpm size
 
-      - name: publish dry run
-        run: pnpm -r --filter "./packages/**" exec npm publish --dry-run
+      # npm pack rather than npm publish --dry-run: the latter asks the registry
+      # whether the version is free, which fails on every commit between a
+      # release and the next version bump. What is worth checking here is what
+      # goes into the tarball, and publint already covers the exports map.
+      - name: tarball contents
+        run: pnpm -r --filter "./packages/**" exec npm pack --dry-run
 
   changeset:
     if: github.event_name == 'pull_request'
