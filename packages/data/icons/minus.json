@@ -1,0 +1,16 @@
+{
+  "name": "minus",
+  "component": "Minus",
+  "hand": "ruler",
+  "lucide": "1.27.0",
+  "paths": [
+    {
+      "d": "M4.86 11.9Q12 12.54 19.03 12.19"
+    }
+  ],
+  "source": [
+    {
+      "d": "M5 12h14"
+    }
+  ]
+}

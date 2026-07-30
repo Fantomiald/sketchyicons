@@ -1,0 +1,16 @@
+{
+  "name": "wifi-zero",
+  "component": "WifiZero",
+  "hand": "ruler",
+  "lucide": "1.27.0",
+  "paths": [
+    {
+      "d": "M11.99 19.99Q12.01 20 12.01 20.01"
+    }
+  ],
+  "source": [
+    {
+      "d": "M12 20h.01"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "chart-no-axes-column-decreasing",
+  "component": "ChartNoAxesColumnDecreasing",
+  "hand": "ruler",
+  "lucide": "1.27.0",
+  "paths": [
+    {
+      "d": "M5.19 20.9Q5.27 12 4.95 2.79"
+    },
+    {
+      "d": "M11.83 21.17Q10.93 15 11.86 9.11"
+    },
+    {
+      "d": "M18.96 20.93Q18.36 18 18.85 15.14"
+    }
+  ],
+  "source": [
+    {
+      "d": "M5 21V3"
+    },
+    {
+      "d": "M12 21V9"
+    },
+    {
+      "d": "M19 21v-6"
+    }
+  ]
+}

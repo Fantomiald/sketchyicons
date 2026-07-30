@@ -1,0 +1,16 @@
+{
+  "name": "chevron-down",
+  "component": "ChevronDown",
+  "hand": "ruler",
+  "lucide": "1.27.0",
+  "paths": [
+    {
+      "d": "M5.87 8.95Q8.69 12.31 11.97 15.04Q14.3 11.3 18.13 8.81"
+    }
+  ],
+  "source": [
+    {
+      "d": "m6 9 6 6 6-6"
+    }
+  ]
+}

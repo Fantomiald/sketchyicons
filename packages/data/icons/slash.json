@@ -1,0 +1,16 @@
+{
+  "name": "slash",
+  "component": "Slash",
+  "hand": "ruler",
+  "lucide": "1.27.0",
+  "paths": [
+    {
+      "d": "M22.07 2.16Q12.64 12.64 2.09 21.82"
+    }
+  ],
+  "source": [
+    {
+      "d": "M22 2 2 22"
+    }
+  ]
+}

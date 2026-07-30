@@ -1,0 +1,16 @@
+{
+  "name": "signal-zero",
+  "component": "SignalZero",
+  "hand": "ruler",
+  "lucide": "1.27.0",
+  "paths": [
+    {
+      "d": "M1.99 20.01Q2.01 20 2.01 20"
+    }
+  ],
+  "source": [
+    {
+      "d": "M2 20h.01"
+    }
+  ]
+}
