@@ -155,8 +155,19 @@ Expected:
 
 ## Versioning
 
-[Semantic Versioning](https://semver.org) 2.0.0, independent versions per
-package, driven by [Changesets](https://github.com/changesets/changesets).
+[Semantic Versioning](https://semver.org) 2.0.0, driven by
+[Changesets](https://github.com/changesets/changesets).
+
+Every package carries the same version number and they are released together.
+This is the `fixed` group in `.changeset/config.json`, and it is deliberate: all
+six packages draw the same icons from the same geometry, so two of them at the
+same number are the same drawings. Under independent versions a reader had no way
+to tell that `@sketchyicons/react` 0.1.1 and `@sketchyicons/vue` 0.2.0 carried an
+identical catalogue.
+
+The cost is that a package takes a version bump for a change it did not receive.
+That is the trade, and for a set that ships one catalogue through several
+renderers it falls the right way.
 
 For an icon library, semver reads as follows:
 

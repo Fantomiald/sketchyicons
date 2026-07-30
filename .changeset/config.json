@@ -1,8 +1,22 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.1.1/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "Fantomiald/sketchyicons" }],
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "Fantomiald/sketchyicons"
+    }
+  ],
   "commit": false,
-  "fixed": [],
+  "fixed": [
+    [
+      "@sketchyicons/data",
+      "@sketchyicons/static",
+      "@sketchyicons/react",
+      "@sketchyicons/react-native",
+      "@sketchyicons/vue",
+      "sketchyicons"
+    ]
+  ],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
