@@ -13,6 +13,7 @@
       "@sketchyicons/static",
       "@sketchyicons/react",
       "@sketchyicons/react-native",
+      "@sketchyicons/angular",
       "@sketchyicons/vue",
       "sketchyicons"
     ]

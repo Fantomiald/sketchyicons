@@ -1,0 +1,51 @@
+{
+  "name": "@sketchyicons/angular",
+  "version": "0.2.0",
+  "description": "Hand drawn icons for Angular, derived from Lucide.",
+  "license": "MIT",
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "scripts": {
+    "generate": "node ../../tools/build-targets.mjs --target angular",
+    "build": "pnpm generate && pnpm compile",
+    "compile": "node ../../tools/clean.mjs dist && ng-packagr -p ng-package.json && node ../../tools/drop-maps.mjs dist",
+    "typecheck": "tsc -p tsconfig.lib.json --noEmit",
+    "publint": "cd dist && publint --strict --pack npm",
+    "attw": "attw --pack ./dist --ignore-rules cjs-resolves-to-esm"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "hand drawn",
+    "sketchy",
+    "angular"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/common": "21.2.19",
+    "@angular/compiler": "21.2.19",
+    "@angular/compiler-cli": "21.2.19",
+    "@angular/core": "21.2.19",
+    "ng-packagr": "21.2.5",
+    "rxjs": "7.8.2",
+    "zone.js": "0.15.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fantomiald/sketchyicons.git",
+    "directory": "packages/angular"
+  },
+  "homepage": "https://sketchyicons.com"
+}

@@ -50,5 +50,12 @@
     "path": "packages/vanilla/dist/esm/index.js",
     "import": "{ House, createElement }",
     "limit": "600 B"
+  },
+  {
+    "name": "angular, one icon and the component",
+    "path": "packages/angular/dist/fesm2022/sketchyicons-angular.mjs",
+    "import": "{ House, SketchyIconComponent }",
+    "ignore": ["@angular/core", "@angular/common", "tslib"],
+    "limit": "3 kB"
   }
 ]
