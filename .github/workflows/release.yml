@@ -16,17 +16,21 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      # Changesets opens the Version Packages pull request. This permission is
+      # not enough on its own: Settings, Actions, General, Workflow permissions
+      # has a separate box for letting Actions create pull requests, and it is
+      # off by default.
       pull-requests: write
       # Required by npm trusted publishing. It is what replaces the token.
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org
@@ -42,7 +46,7 @@ jobs:
       # Opens or updates the Version Packages pull request. Merging it runs this
       # workflow again, this time with versions already bumped, and publish
       # takes over.
-      - uses: changesets/action@v1
+      - uses: changesets/action@v1.9.0
         with:
           version: pnpm changeset version
           publish: pnpm changeset publish
