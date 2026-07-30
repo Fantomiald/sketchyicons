@@ -31,9 +31,10 @@ import { House, Star } from '@sketchyicons/react';
 | [`@sketchyicons/static`](packages/static)             | one SVG file per icon, plus a sprite      |
 
 Every framework package is generated from `data`, never from Lucide directly.
-A target whose icon file is a factory call, Solid or Preact for instance, is five
-lines under `tools/targets`. Svelte and Angular need their own compile step in
-their package, so they are a day's work rather than five lines.
+A target whose icon file is a factory call is five lines under `tools/targets`:
+React, React Native, Vue, Preact and Solid all share one. Angular and Svelte
+compile a component in the consumer's build, so they ship one component and the
+icons as data, and they carry their own packaging step.
 
 ## Coming from Lucide
 

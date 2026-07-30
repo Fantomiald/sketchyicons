@@ -57,5 +57,24 @@
     "import": "{ House, SketchyIconComponent }",
     "ignore": ["@angular/core", "@angular/common", "tslib"],
     "limit": "3 kB"
+  },
+  {
+    "name": "preact, one icon from the barrel",
+    "path": "packages/preact/dist/esm/index.js",
+    "import": "{ House }",
+    "ignore": ["preact"],
+    "limit": "700 B"
+  },
+  {
+    "name": "solid, one icon from the barrel",
+    "path": "packages/solid/dist/esm/index.js",
+    "import": "{ House }",
+    "ignore": ["solid-js", "solid-js/h"],
+    "limit": "900 B"
+  },
+  {
+    "name": "svelte, one icon",
+    "path": "packages/svelte/dist/icons/house.js",
+    "limit": "600 B"
   }
 ]

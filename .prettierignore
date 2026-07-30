@@ -8,3 +8,7 @@ preview/
 .changeset/*.md
 CHANGELOG.md
 packages/*/CHANGELOG.md
+packages/svelte/.svelte-kit/
+packages/svelte/src/lib/icons/
+packages/svelte/src/lib/index.ts
+packages/angular/dist/

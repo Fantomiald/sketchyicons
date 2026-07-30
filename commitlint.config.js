@@ -24,6 +24,7 @@ export default {
         'svelte',
         'angular',
         'solid',
+        'preact',
         'vanilla',
         'tools',
         'repo',

@@ -5,6 +5,11 @@ PROMPT.md
 # geometry diff is the only way to review an upstream Lucide bump.
 packages/*/dist/
 packages/*/src/icons/
+packages/svelte/.svelte-kit/
+packages/svelte/dist/
+packages/svelte/src/lib/icons/
+packages/svelte/src/lib/index.ts
+packages/angular/dist/
 packages/data/src/icons.ts
 packages/data/src/index.ts
 packages/data/src/names.ts

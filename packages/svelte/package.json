@@ -1,0 +1,63 @@
+{
+  "name": "@sketchyicons/svelte",
+  "version": "0.4.0",
+  "description": "Hand drawn icons for Svelte, derived from Lucide.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./icons/*": {
+      "types": "./dist/icons/*.d.ts",
+      "default": "./dist/icons/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "NOTICE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "generate": "node ../../tools/build-targets.mjs --target svelte",
+    "build": "pnpm generate && pnpm compile",
+    "compile": "node ../../tools/clean.mjs dist && svelte-package --input src/lib --output dist && node ../../tools/drop-maps.mjs dist",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json --threshold error",
+    "publint": "publint --strict",
+    "attw": "attw --pack . --ignore-rules internal-resolution-error cjs-resolves-to-esm no-resolution"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "hand drawn",
+    "sketchy",
+    "svelte"
+  ],
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "2.5.8",
+    "@sveltejs/vite-plugin-svelte": "7.2.0",
+    "svelte": "5.56.8",
+    "svelte-check": "4.7.4",
+    "vite": "7.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fantomiald/sketchyicons.git",
+    "directory": "packages/svelte"
+  },
+  "homepage": "https://sketchyicons.com"
+}

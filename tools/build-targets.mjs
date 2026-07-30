@@ -20,8 +20,22 @@ import reactNative from './targets/react-native.mjs';
 import vue from './targets/vue.mjs';
 import vanilla from './targets/vanilla.mjs';
 import angular from './targets/angular.mjs';
+import preact from './targets/preact.mjs';
+import solid from './targets/solid.mjs';
+import svelte from './targets/svelte.mjs';
 
-const TARGETS = [data, staticFiles, react, reactNative, vue, vanilla, angular];
+const TARGETS = [
+  data,
+  staticFiles,
+  react,
+  reactNative,
+  vue,
+  vanilla,
+  angular,
+  preact,
+  solid,
+  svelte,
+];
 
 const at = process.argv.indexOf('--target');
 const wanted = at > -1 ? process.argv[at + 1] : null;

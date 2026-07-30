@@ -11,6 +11,9 @@ export default tseslint.config(
       // infinity, and the export it produces shadows the global the way
       // lucide-react's does.
       'packages/*/src/icons/**',
+      'packages/svelte/.svelte-kit/**',
+      'packages/svelte/src/lib/icons/**',
+      'packages/svelte/src/lib/index.ts',
       'packages/data/src/icons.ts',
       'packages/data/src/index.ts',
       'packages/data/src/names.ts',

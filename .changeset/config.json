@@ -15,7 +15,10 @@
       "@sketchyicons/react-native",
       "@sketchyicons/angular",
       "@sketchyicons/vue",
-      "sketchyicons"
+      "sketchyicons",
+      "@sketchyicons/preact",
+      "@sketchyicons/solid",
+      "@sketchyicons/svelte"
     ]
   ],
   "linked": [],
