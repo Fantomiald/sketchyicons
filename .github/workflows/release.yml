@@ -3,6 +3,9 @@ name: release
 on:
   push:
     branches: [main]
+  # A release can fail on one package and succeed on the others, so there has to
+  # be a way to run it again without inventing a commit.
+  workflow_dispatch:
 
 concurrency:
   group: release-${{ github.ref }}
