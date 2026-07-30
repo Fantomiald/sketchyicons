@@ -1,0 +1,10 @@
+pnpm-lock.yaml
+dist/
+packages/*/dist/
+packages/*/src/icons/
+packages/data/icons/
+packages/static/icons/
+preview/
+.changeset/*.md
+CHANGELOG.md
+packages/*/CHANGELOG.md

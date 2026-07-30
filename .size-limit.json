@@ -1,0 +1,41 @@
+[
+  {
+    "name": "react, one icon from the barrel",
+    "path": "packages/react/dist/esm/index.js",
+    "import": "{ House }",
+    "ignore": ["react"],
+    "limit": "600 B"
+  },
+  {
+    "name": "react, one icon from its own path",
+    "path": "packages/react/dist/esm/icons/house.js",
+    "ignore": ["react"],
+    "limit": "800 B"
+  },
+  {
+    "name": "react, twelve icons from the barrel",
+    "path": "packages/react/dist/esm/index.js",
+    "import": "{ House, Star, Heart, Search, Bell, Calendar, Camera, Check, Clock, Compass, Copy, Crown }",
+    "ignore": ["react"],
+    "limit": "3 kB"
+  },
+  {
+    "name": "react, the whole barrel, all 1756",
+    "path": "packages/react/dist/esm/index.js",
+    "ignore": ["react"],
+    "limit": "320 kB"
+  },
+  {
+    "name": "react-native, one icon from the barrel",
+    "path": "packages/react-native/dist/esm/index.js",
+    "import": "{ House }",
+    "ignore": ["react", "react-native-svg"],
+    "limit": "900 B"
+  },
+  {
+    "name": "data, one icon",
+    "path": "packages/data/dist/esm/index.js",
+    "import": "{ House }",
+    "limit": "350 B"
+  }
+]

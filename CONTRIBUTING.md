@@ -64,18 +64,18 @@ variation.
 
 Allowed types, and nothing else:
 
-| Type | Use |
-| --- | --- |
-| `feat` | a new capability for someone using the library |
-| `fix` | a behaviour correction |
-| `perf` | a measured improvement, with the number in the body |
-| `refactor` | no behaviour change |
-| `docs` | documentation only |
-| `test` | tests only |
-| `build` | generator, bundling, dependencies |
-| `ci` | workflows |
-| `chore` | everything else, never application code |
-| `revert` | a reversal, with the SHA in the body |
+| Type       | Use                                                 |
+| ---------- | --------------------------------------------------- |
+| `feat`     | a new capability for someone using the library      |
+| `fix`      | a behaviour correction                              |
+| `perf`     | a measured improvement, with the number in the body |
+| `refactor` | no behaviour change                                 |
+| `docs`     | documentation only                                  |
+| `test`     | tests only                                          |
+| `build`    | generator, bundling, dependencies                   |
+| `ci`       | workflows                                           |
+| `chore`    | everything else, never application code             |
+| `revert`   | a reversal, with the SHA in the body                |
 
 The scope is a package name without the npm scope prefix (`react`,
 `react-native`, `data`, `static`), or `repo` for repository wide changes.
@@ -160,15 +160,15 @@ package, driven by [Changesets](https://github.com/changesets/changesets).
 
 For an icon library, semver reads as follows:
 
-| Change | Level |
-| --- | --- |
-| new icons added | `minor` |
-| new optional prop | `minor` |
-| an icon removed or renamed | `major` |
-| a prop removed or renamed | `major` |
+| Change                                    | Level                                                  |
+| ----------------------------------------- | ------------------------------------------------------ |
+| new icons added                           | `minor`                                                |
+| new optional prop                         | `minor`                                                |
+| an icon removed or renamed                | `major`                                                |
+| a prop removed or renamed                 | `major`                                                |
 | the rendering of an existing icon changes | `minor`, and the changeset body shows before and after |
-| an unreadable stroke fixed | `patch` |
-| upstream Lucide geometry bumped | `minor`, never `patch` |
+| an unreadable stroke fixed                | `patch`                                                |
+| upstream Lucide geometry bumped           | `minor`, never `patch`                                 |
 
 That last row is a rule, not a preference. Someone taking a patch upgrade does
 not expect their icons to change shape, so an upstream bump is always at least
@@ -218,16 +218,16 @@ packages.
 
 None of these are optional and all of them run in CI.
 
-| Check | Tool | What it prevents |
-| --- | --- | --- |
-| commit format | `commitlint` and Husky | an unreadable history |
-| lint and format | ESLint, Prettier | style debates in review |
-| types | `tsc --noEmit` | an API that does not compile downstream |
-| packaging | `publint` | a broken `exports` map, a missing `main` |
-| published types | `@arethetypeswrong/cli` | types the consumer cannot resolve |
-| determinism | in house test | two builds producing different drawings |
-| size | `size-limit` | one imported icon pulling in 1704 |
-| rendering | per target snapshots | a stroke regression invisible in review |
+| Check           | Tool                    | What it prevents                         |
+| --------------- | ----------------------- | ---------------------------------------- |
+| commit format   | `commitlint` and Husky  | an unreadable history                    |
+| lint and format | ESLint, Prettier        | style debates in review                  |
+| types           | `tsc --noEmit`          | an API that does not compile downstream  |
+| packaging       | `publint`               | a broken `exports` map, a missing `main` |
+| published types | `@arethetypeswrong/cli` | types the consumer cannot resolve        |
+| determinism     | in house test           | two builds producing different drawings  |
+| size            | `size-limit`            | one imported icon pulling in 1704        |
+| rendering       | per target snapshots    | a stroke regression invisible in review  |
 
 ## Before opening a pull request
 

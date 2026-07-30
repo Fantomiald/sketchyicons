@@ -1,9 +1,17 @@
 # Starting brief, not part of the published repository
 PROMPT.md
 
-# Generated
-dist/
+# Generated. packages/data/icons is the exception and is committed, because a
+# geometry diff is the only way to review an upstream Lucide bump.
 packages/*/dist/
+packages/*/src/icons/
+packages/data/src/icons.ts
+packages/data/src/index.ts
+packages/data/src/names.ts
+packages/static/icons/
+packages/static/icons.json
+packages/static/sprite.svg
+dist/
 *.tsbuildinfo
 
 # Preview output
@@ -13,6 +21,7 @@ preview/
 node_modules/
 .pnpm-store/
 .turbo/
+.size-limit-cache/
 
 .DS_Store
 *.log

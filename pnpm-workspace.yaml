@@ -1,0 +1,6 @@
+packages:
+  - packages/*
+
+# Icon components are generated, so no package needs a dependency install hook.
+# Keeping the allow list empty makes any new build script an explicit decision.
+onlyBuiltDependencies: []
