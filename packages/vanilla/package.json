@@ -1,6 +1,6 @@
 {
   "name": "sketchyicons",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Hand drawn icons for the DOM, derived from Lucide. No framework.",
   "license": "MIT",
   "engines": {
