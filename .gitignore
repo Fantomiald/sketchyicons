@@ -1,0 +1,20 @@
+# Starting brief, not part of the published repository
+PROMPT.md
+
+# Generated
+dist/
+packages/*/dist/
+*.tsbuildinfo
+
+# Preview output
+preview/
+*.preview.html
+
+node_modules/
+.pnpm-store/
+.turbo/
+
+.DS_Store
+*.log
+.env
+.env.*
