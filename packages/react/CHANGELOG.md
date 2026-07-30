@@ -1,5 +1,12 @@
 # @sketchyicons/react
 
+## 0.1.1
+
+### Patch Changes
+
+- [`282e6f9`](https://github.com/Fantomiald/sketchyicons/commit/282e6f9cd4084f9a02aa8ee08ded2b4d3542e5dc) Thanks [@Fantomiald](https://github.com/Fantomiald)! - Point homepage at sketchyicons.com rather than at the package directory on
+  GitHub, so the link on the npm page reaches the catalogue.
+
 ## 0.1.0
 
 ### Minor Changes
