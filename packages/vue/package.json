@@ -1,6 +1,6 @@
 {
   "name": "@sketchyicons/vue",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Hand drawn icons for Vue, derived from Lucide.",
   "license": "MIT",
   "engines": {
