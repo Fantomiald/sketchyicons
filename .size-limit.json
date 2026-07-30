@@ -37,5 +37,18 @@
     "path": "packages/data/dist/esm/index.js",
     "import": "{ House }",
     "limit": "350 B"
+  },
+  {
+    "name": "vue, one icon from the barrel",
+    "path": "packages/vue/dist/esm/index.js",
+    "import": "{ House }",
+    "ignore": ["vue"],
+    "limit": "700 B"
+  },
+  {
+    "name": "dom, one icon and the element helper",
+    "path": "packages/vanilla/dist/esm/index.js",
+    "import": "{ House, createElement }",
+    "limit": "600 B"
   }
 ]

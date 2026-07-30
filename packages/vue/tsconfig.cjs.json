@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node10",
+    "verbatimModuleSyntax": false,
+    "outDir": "dist/cjs",
+    "rootDir": "src",
+    "lib": ["ES2021", "DOM"],
+    "types": [],
+    "sourceMap": false,
+    "declarationMap": false
+  },
+  "include": ["src"]
+}

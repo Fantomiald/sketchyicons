@@ -17,8 +17,10 @@ import data from './targets/data.mjs';
 import staticFiles from './targets/static.mjs';
 import react from './targets/react.mjs';
 import reactNative from './targets/react-native.mjs';
+import vue from './targets/vue.mjs';
+import vanilla from './targets/vanilla.mjs';
 
-const TARGETS = [data, staticFiles, react, reactNative];
+const TARGETS = [data, staticFiles, react, reactNative, vue, vanilla];
 
 const at = process.argv.indexOf('--target');
 const wanted = at > -1 ? process.argv[at + 1] : null;
