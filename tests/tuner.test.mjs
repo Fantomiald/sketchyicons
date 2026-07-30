@@ -11,7 +11,7 @@ import { Window } from 'happy-dom';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { elementToPath } from '../tools/lib/geometry.mjs';
-import { makeRandom, handFor, frameFor, roughen } from '../tools/lib/roughen.mjs';
+import { HAND, makeRandom, handFor, frameFor, roughen } from '../tools/lib/roughen.mjs';
 
 const nodes = JSON.parse(readFileSync('node_modules/lucide-static/icon-nodes.json', 'utf8'));
 
@@ -90,7 +90,7 @@ describe('drawing', () => {
     const { document } = await open();
     const card = cardFor(document, 'accessibility');
     const svg = card.querySelector('svg.drawn');
-    const expected = drawHere('accessibility', { drift: 0.6, bow: 1.13 });
+    const expected = drawHere('accessibility', HAND);
     for (const d of expected) expect(svg.innerHTML).toContain(`d="${d}"`);
   });
 
@@ -116,7 +116,7 @@ describe('the global knobs', () => {
 
     const after = card.querySelector('svg.drawn').innerHTML;
     expect(after).not.toBe(before);
-    for (const d of drawHere('accessibility', { drift: 0.95, bow: 1.13 })) {
+    for (const d of drawHere('accessibility', { ...HAND, drift: 0.95 })) {
       expect(after).toContain(`d="${d}"`);
     }
   });
@@ -137,7 +137,7 @@ describe('tuning one icon', () => {
     expect(card.classList.contains('tuned')).toBe(true);
     expect(other.classList.contains('tuned')).toBe(false);
     expect(other.querySelector('svg.drawn').innerHTML).toBe(otherBefore);
-    for (const d of drawHere('accessibility', { drift: 0.6, bow: 1.13 }, { drift: 0.25 })) {
+    for (const d of drawHere('accessibility', HAND, { drift: 0.25 })) {
       expect(card.querySelector('svg.drawn').innerHTML).toContain(`d="${d}"`);
     }
   });
@@ -149,7 +149,7 @@ describe('tuning one icon', () => {
     card.querySelector('.open').click();
     card.querySelector('.panel [data-act="reseed"]').click();
     expect(card.querySelector('svg.drawn').innerHTML).not.toBe(before);
-    for (const d of drawHere('accessibility', { drift: 0.6, bow: 1.13 }, { seed: 1 })) {
+    for (const d of drawHere('accessibility', HAND, { seed: 1 })) {
       expect(card.querySelector('svg.drawn').innerHTML).toContain(`d="${d}"`);
     }
   });
@@ -191,7 +191,7 @@ describe('what comes out', () => {
 
     expect(copied).toHaveLength(1);
     const settings = JSON.parse(copied[0]);
-    expect(settings.hand).toEqual({ drift: 0.72, bow: 1.13 });
+    expect(settings.hand).toEqual({ drift: 0.72, bow: HAND.bow });
     expect(settings.icons.accessibility).toEqual({
       drift: 0.3,
       why: 'trop agitée',

@@ -22,7 +22,7 @@ off the chord, so a short run cannot bow further than it is long.
 **2. A subpath with no curve keeps its amplitude low.** A subpath that contains
 no `C` or `Q` is a geometric figure: an arrow, a chevron, a cross, an equals
 sign. Its identity is its exactness, so a wobble reads as broken rather than as
-drawn. It draws at drift 0.21 and bow 0.45 instead of 0.6 and 1.13.
+drawn. It draws at drift 0.21 and bow 0.24 instead of 0.6 and 0.6.
 
 The rule reads each subpath rather than the whole icon, so the plus inside
 `circle-plus` is held to a ruler while the circle around it is not. 159 of

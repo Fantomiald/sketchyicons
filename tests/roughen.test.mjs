@@ -191,16 +191,23 @@ const midpoints = (d) =>
   });
 
 describe('curves take a hand too', () => {
-  it('carries the middle of a curve further than its ends move', () => {
+  it('bows a curve away from the line Lucide drew', () => {
     // Until this, a curve took drift on its points and nothing else, so an icon
-    // drawn entirely in curves came out looking like Lucide with a tremble. A
-    // bow shows halfway along, where drift on the endpoints cannot reach.
+    // drawn entirely in curves came out looking like Lucide with a tremble.
+    //
+    // The drift is turned off to measure it. Both move the middle of a curve, and
+    // the bow is signed, so on any single curve one can cancel the other: with
+    // both on, circle's middle moves less than with the bow alone.
     for (const name of ['cloud', 'rabbit', 'circle', 'fish', 'flame']) {
-      const { source, paths } = draw(name);
+      const source = nodes[name].map(elementToPath);
+      const frame = frameFor(source);
+      const bowOnly = { ...handFor(source), drift: 0 };
+
       let worst = 0;
-      for (let i = 0; i < source.length; i += 1) {
-        const before = midpoints(source[i].d);
-        const after = midpoints(paths[i]);
+      const random = makeRandom(name);
+      for (const path of source) {
+        const before = midpoints(path.d);
+        const after = midpoints(roughen(path.d, random, bowOnly, frame));
         for (let k = 0; k < before.length; k += 1) {
           if (!before[k] || !after[k]) continue;
           worst = Math.max(
@@ -209,7 +216,7 @@ describe('curves take a hand too', () => {
           );
         }
       }
-      expect(worst, name).toBeGreaterThan(HAND.drift / 2);
+      expect(worst, name).toBeGreaterThan(0.1);
     }
   });
 

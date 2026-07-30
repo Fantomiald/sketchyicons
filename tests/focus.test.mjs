@@ -10,7 +10,7 @@ import { Window } from 'happy-dom';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { elementToPath } from '../tools/lib/geometry.mjs';
-import { makeRandom, handFor, frameFor, roughen } from '../tools/lib/roughen.mjs';
+import { HAND, makeRandom, handFor, frameFor, roughen } from '../tools/lib/roughen.mjs';
 
 const nodes = JSON.parse(readFileSync('node_modules/lucide-static/icon-nodes.json', 'utf8'));
 const names = Object.keys(nodes).sort();
@@ -83,7 +83,7 @@ describe('one icon at a time', () => {
     const { document } = await open();
     expect(el(document, 'name').textContent).toBe(names[0]);
     const drawn = el(document, 'hero-new').innerHTML;
-    for (const d of drawHere(names[0], { drift: 0.6, bow: 1.13 })) {
+    for (const d of drawHere(names[0], HAND)) {
       expect(drawn).toContain(`d="${d}"`);
     }
     expect(el(document, 'hero-src').innerHTML).toContain('<path');
@@ -137,7 +137,7 @@ describe('tuning', () => {
     expect(el(document, 'hero-new').innerHTML).not.toBe(before);
     expect(el(document, 'badge').hidden).toBe(false);
     expect(el(document, 'drift-off').textContent).toBe('propre');
-    for (const d of drawHere(names[0], { drift: 0.6, bow: 1.13 }, { drift: 0.25 })) {
+    for (const d of drawHere(names[0], HAND, { drift: 0.25 })) {
       expect(el(document, 'hero-new').innerHTML).toContain(`d="${d}"`);
     }
   });
@@ -145,9 +145,9 @@ describe('tuning', () => {
   it('nudges with the arrow keys, bow with shift', async () => {
     const { document } = await open();
     key(document, { key: 'ArrowUp' });
-    expect(el(document, 'drift-out').textContent).toBe('0.62');
+    expect(el(document, 'drift-out').textContent).toBe((HAND.drift + 0.02).toFixed(2));
     key(document, { key: 'ArrowDown', shiftKey: true });
-    expect(el(document, 'bow-out').textContent).toBe('1.08');
+    expect(el(document, 'bow-out').textContent).toBe((HAND.bow - 0.05).toFixed(2));
   });
 
   it('puts it back on remettre', async () => {
@@ -212,7 +212,7 @@ describe('the file', () => {
     fire(document, drift);
     const shown = JSON.parse(el(document, 'json').textContent);
     expect(shown.icons[names[0]]).toEqual({ drift: 0.5, why: 'réglée à la main' });
-    expect(shown.hand).toEqual({ drift: 0.6, bow: 1.13 });
+    expect(shown.hand).toEqual({ drift: HAND.drift, bow: HAND.bow });
   });
 
   it('reproduces exactly what was on screen', async () => {
@@ -247,7 +247,7 @@ describe('nothing can lock the file in', () => {
     // The one way to lose a long pass would be a quota that filled up in
     // silence, so the whole catalogue is tuned and read back.
     const { storage } = await open();
-    const settings = { hand: { drift: 0.6, bow: 1.13 }, icons: {} };
+    const settings = { hand: { ...HAND }, icons: {} };
     for (const name of names) {
       settings.icons[name] = { drift: 0.42, bow: 1.7, seed: 3, why: 'réglée à la main' };
     }
@@ -278,7 +278,7 @@ describe('nothing can lock the file in', () => {
 
   it('shows the whole file, never a trimmed one', async () => {
     const { storage } = await open();
-    const settings = { hand: { drift: 0.6, bow: 1.13 }, icons: {} };
+    const settings = { hand: { ...HAND }, icons: {} };
     for (const name of names.slice(0, 800)) settings.icons[name] = { seed: 2, why: 'x' };
     storage.setItem('sketchyicons-tuning', JSON.stringify(settings));
     const again = await open(storage);

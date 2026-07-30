@@ -14,14 +14,14 @@ import { parsePath, chordLength, boundsOf } from './geometry.mjs';
  * below scales it down, nothing scales it up. packages/data/overrides.json
  * replaces it.
  */
-export const HAND = { drift: 0.6, bow: 1.13 };
+export const HAND = { drift: 0.6, bow: 0.6 };
 
 /**
  * The amplitude for a subpath of straight runs and nothing else: an arrow, a
  * chevron, a cross. No organic detail, so a wobble reads as broken rather than
  * as drawn. Applied as a ratio of HAND, in RULER_SHARE.
  */
-export const RULER = { drift: 0.21, bow: 0.45 };
+export const RULER = { drift: 0.21, bow: 0.24 };
 
 /**
  * The run length at which drift reaches the full amplitude; below it drift is
