@@ -1,0 +1,42 @@
+{
+  "name": "@sketchyicons/static",
+  "version": "0.0.0",
+  "description": "Hand drawn icons as raw SVG files and a sprite, derived from Lucide. No JavaScript.",
+  "license": "MIT",
+  "type": "commonjs",
+  "exports": {
+    "./icons/*.svg": "./icons/*.svg",
+    "./sprite.svg": "./sprite.svg",
+    "./icons.json": "./icons.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icons",
+    "sprite.svg",
+    "icons.json",
+    "NOTICE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "generate": "node ../../tools/build-targets.mjs --target static",
+    "build": "pnpm generate",
+    "typecheck": "node -e \"process.exit(0)\"",
+    "publint": "publint --strict",
+    "attw": "attw --pack . --ignore-rules no-resolution cjs-only-exports-default"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "sprite",
+    "hand drawn",
+    "sketchy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fantomiald/sketchyicons.git",
+    "directory": "packages/static"
+  },
+  "homepage": "https://github.com/Fantomiald/sketchyicons/tree/main/packages/static"
+}

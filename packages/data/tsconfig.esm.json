@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "outDir": "dist/esm",
+    "rootDir": "src",
+    "lib": ["ES2021"],
+    "types": [],
+    "sourceMap": false,
+    "declarationMap": false
+  },
+  "include": ["src"]
+}

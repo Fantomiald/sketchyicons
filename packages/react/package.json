@@ -1,0 +1,72 @@
+{
+  "name": "@sketchyicons/react",
+  "version": "0.0.0",
+  "description": "Hand drawn icons for React, derived from Lucide.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./icons/*": {
+      "import": {
+        "types": "./dist/esm/icons/*.d.ts",
+        "default": "./dist/esm/icons/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/icons/*.d.ts",
+        "default": "./dist/cjs/icons/*.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "NOTICE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "generate": "node ../../tools/build-targets.mjs --target react",
+    "build": "pnpm generate && pnpm compile",
+    "compile": "node ../../tools/clean.mjs dist && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node ../../tools/mark-cjs.mjs dist",
+    "typecheck": "tsc -p tsconfig.esm.json --noEmit",
+    "publint": "publint --strict",
+    "attw": "attw --pack ."
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "hand drawn",
+    "sketchy",
+    "react"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.17",
+    "react": "19.2.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fantomiald/sketchyicons.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/Fantomiald/sketchyicons/tree/main/packages/react"
+}
