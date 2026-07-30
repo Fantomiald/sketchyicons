@@ -1,6 +1,6 @@
 {
   "name": "@sketchyicons/react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Hand drawn icons for React, derived from Lucide.",
   "license": "MIT",
   "engines": {
