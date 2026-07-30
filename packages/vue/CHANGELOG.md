@@ -1,5 +1,16 @@
 # @sketchyicons/vue
 
+## 0.2.1
+
+### Patch Changes
+
+- [`1b7d379`](https://github.com/Fantomiald/sketchyicons/commit/1b7d379b17a3619bfd34f24474b4c4ba19abdf9a) Thanks [@Fantomiald](https://github.com/Fantomiald)! - Release the six packages on one version number from here on.
+
+  They all draw the same icons from the same geometry, so two packages at the same
+  number are the same drawings. Under independent versions a reader had no way to
+  tell that @sketchyicons/react 0.1.1 and @sketchyicons/vue 0.2.0 carried an
+  identical catalogue.
+
 ## 0.2.0
 
 ### Minor Changes
