@@ -1,6 +1,6 @@
 {
   "name": "@sketchyicons/preact",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Hand drawn icons for Preact, derived from Lucide.",
   "license": "MIT",
   "engines": {
