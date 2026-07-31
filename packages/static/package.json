@@ -1,6 +1,6 @@
 {
   "name": "@sketchyicons/static",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Hand drawn icons as raw SVG files and a sprite, derived from Lucide. No JavaScript.",
   "license": "MIT",
   "type": "commonjs",
