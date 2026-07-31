@@ -36,7 +36,8 @@ or coloured in the markup. An element naming an icon you did not hand over is
 left alone.
 
 Only the icons you import are drawn, so a page pays for what it uses. Handing
-over every icon means shipping every icon.
+over every icon means shipping every icon. One icon and `createElement` together
+cost 450 bytes minified and brotlied.
 
 ## Attributes
 

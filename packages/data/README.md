@@ -25,7 +25,7 @@ const svg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 ```
 
 Icons are named constants rather than one module each, so a bundler drops the
-ones nobody imported. One icon costs 251 bytes minified and brotlied.
+ones nobody imported. One icon costs 250 bytes minified and brotlied.
 
 ## What it exports
 

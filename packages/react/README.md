@@ -23,7 +23,7 @@ export const Header = () => (
 ```
 
 One icon per file, so importing one does not pull in the rest. A single icon
-costs 497 bytes minified and brotlied, all 1756 cost 283 kB.
+costs 492 bytes minified and brotlied, all 1756 cost 282 kB.
 
 ## Coming from Lucide
 

@@ -38,7 +38,7 @@ component, so 1756 of them would be 1756 things for the compiler to work through
 in every consumer's build. The icons stay data and one component draws them.
 
 Icons are plain constants with no side effects, so a bundler drops the ones you
-did not import. One icon costs 3.5 kB against 901 kB for the whole catalogue.
+did not import. One icon costs 3.5 kB against 881 kB for the whole catalogue.
 
 ## Inputs
 

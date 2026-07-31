@@ -16,6 +16,7 @@ Nothing here is a case by case judgement call. What is written applies.
     svelte/                @sketchyicons/svelte
     angular/               @sketchyicons/angular
     solid/                 @sketchyicons/solid
+    preact/                @sketchyicons/preact
     vanilla/               sketchyicons                DOM, no framework
   tools/
     roughen-icons.mjs      the generator

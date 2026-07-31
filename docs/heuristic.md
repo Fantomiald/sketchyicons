@@ -64,8 +64,8 @@ radii to protect, so it bows like any other curve.
 
 The approximation is exact at both ends and off by about three ten thousandths of
 the radius in between, well under the two decimals the output is rounded to. It
-costs about 30 percent on the packed size of the react package, 283 kB against
-216 kB for all 1756 icons, and nothing at all on a consumer importing a few.
+costs about a third on the packed size of the react package, and nothing at all
+on a consumer importing a few icons.
 
 ## Curves bow, and their tension varies
 

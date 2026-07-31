@@ -7,11 +7,12 @@ hand: straight runs bow, curves change their fullness, every coordinate drifts a
 fraction of a unit, and the drift is seeded from the icon name. Two builds are
 byte identical, and an upstream Lucide bump shows only the strokes that moved.
 
-1756 icons. The props match Lucide's, so migrating is an import change and
-nothing else.
+1756 icons across eight framework packages. The props match Lucide's, so
+migrating is an import change and nothing else.
 
 ```sh
-npm install @sketchyicons/react
+npm install @sketchyicons/react          # or /vue, /svelte, /angular, /preact, /solid
+npm install sketchyicons                 # the DOM, no framework
 ```
 
 ```tsx
@@ -23,12 +24,18 @@ import { House, Star } from '@sketchyicons/react';
 
 ## Packages
 
-| Package                                               | What it holds                             |
-| ----------------------------------------------------- | ----------------------------------------- |
-| [`@sketchyicons/react`](packages/react)               | one React component per icon              |
-| [`@sketchyicons/react-native`](packages/react-native) | the same over `react-native-svg`          |
-| [`@sketchyicons/data`](packages/data)                 | the geometry, no framework, no dependency |
-| [`@sketchyicons/static`](packages/static)             | one SVG file per icon, plus a sprite      |
+| Package                                               | What it holds                             | One icon |
+| ----------------------------------------------------- | ----------------------------------------- | -------- |
+| [`@sketchyicons/react`](packages/react)               | one component per icon                    | 492 B    |
+| [`@sketchyicons/react-native`](packages/react-native) | the same over `react-native-svg`          | 744 B    |
+| [`@sketchyicons/vue`](packages/vue)                   | one component per icon                    | 466 B    |
+| [`@sketchyicons/svelte`](packages/svelte)             | one component, icons as data              | 268 B    |
+| [`@sketchyicons/angular`](packages/angular)           | one component, icons as data              | 1.18 kB  |
+| [`@sketchyicons/preact`](packages/preact)             | one component per icon                    | 467 B    |
+| [`@sketchyicons/solid`](packages/solid)               | one component per icon                    | 740 B    |
+| [`sketchyicons`](packages/vanilla)                    | the DOM, no framework, no dependency      | 450 B    |
+| [`@sketchyicons/data`](packages/data)                 | the geometry, no framework, no dependency | 250 B    |
+| [`@sketchyicons/static`](packages/static)             | one SVG file per icon, plus a sprite      |          |
 
 Every framework package is generated from `data`, never from Lucide directly.
 A target whose icon file is a factory call is five lines under `tools/targets`:
@@ -52,11 +59,11 @@ renamed are exported alongside the new ones, so `Home`, `HelpCircle` and
 Measured with `size-limit`, minified and brotlied, `react` excluded. `pnpm size`
 runs it and CI fails if it drifts.
 
-| Import       | Size      |
-| ------------ | --------- |
-| one icon     | 497 B     |
-| twelve icons | 2.22 kB   |
-| all 1756     | 282.56 kB |
+| Import, in `@sketchyicons/react` | Size      |
+| -------------------------------- | --------- |
+| one icon                         | 492 B     |
+| twelve icons                     | 2.22 kB   |
+| all 1756                         | 281.88 kB |
 
 One icon per file, and every `package.json` in the tarball carries
 `"sideEffects": false`, so importing one icon does not pull in the rest. Zero
