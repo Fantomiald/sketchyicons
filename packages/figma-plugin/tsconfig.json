@@ -1,0 +1,9 @@
+{
+  "extends": ["../../tsconfig.base.json", "@create-figma-plugin/tsconfig"],
+  "compilerOptions": {
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types", "./node_modules/@figma"]
+  },
+  "include": ["src", "tests"]
+}

@@ -26,6 +26,7 @@ export default {
         'solid',
         'preact',
         'vanilla',
+        'figma-plugin',
         'tools',
         'repo',
       ],

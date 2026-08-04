@@ -1,0 +1,47 @@
+{
+  "name": "@sketchyicons/figma-plugin",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Figma plugin that inserts sketchyicons onto the canvas",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "figma-plugin": {
+    "editorType": [
+      "figma"
+    ],
+    "id": "0",
+    "name": "Sketchy Icons",
+    "main": "src/main.ts",
+    "ui": "src/ui.tsx",
+    "networkAccess": {
+      "allowedDomains": [
+        "none"
+      ]
+    }
+  },
+  "scripts": {
+    "generate": "node ../../tools/build-targets.mjs --target figma-plugin",
+    "build": "pnpm generate && build-figma-plugin --typecheck --minify",
+    "watch": "pnpm generate && build-figma-plugin --typecheck --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@create-figma-plugin/ui": "4.0.3",
+    "@create-figma-plugin/utilities": "4.0.3",
+    "preact": "10.29.7"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/build": "4.0.3",
+    "@create-figma-plugin/tsconfig": "4.0.3",
+    "@figma/plugin-typings": "1.132.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fantomiald/sketchyicons.git",
+    "directory": "packages/figma-plugin"
+  },
+  "homepage": "https://sketchyicons.com"
+}

@@ -1,0 +1,10 @@
+sketchyicons
+============
+
+The MIT licence in LICENSE covers the code in this repository: the generator,
+the packages and their documentation.
+
+The icon geometry is not covered by it. Every shape is derived from Lucide by
+bowing its straight runs and drifting its coordinates, so the drawn paths are a
+derivative work of Lucide and keep Lucide's terms. Lucide is ISC licensed,
+(c) Lucide Icons and Contributors, https://lucide.dev.
