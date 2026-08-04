@@ -16,6 +16,9 @@ packages/data/src/names.ts
 packages/static/icons/
 packages/static/icons.json
 packages/static/sprite.svg
+packages/figma-plugin/src/generated/
+packages/figma-plugin/manifest.json
+packages/figma-plugin/build/
 dist/
 *.tsbuildinfo
 

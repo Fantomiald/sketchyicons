@@ -23,6 +23,7 @@ import angular from './targets/angular.mjs';
 import preact from './targets/preact.mjs';
 import solid from './targets/solid.mjs';
 import svelte from './targets/svelte.mjs';
+import figmaPlugin from './targets/figma-plugin.mjs';
 
 const TARGETS = [
   data,
@@ -35,6 +36,7 @@ const TARGETS = [
   preact,
   solid,
   svelte,
+  figmaPlugin,
 ];
 
 const at = process.argv.indexOf('--target');

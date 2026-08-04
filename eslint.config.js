@@ -19,6 +19,8 @@ export default tseslint.config(
       'packages/data/src/names.ts',
       'packages/data/icons/**',
       'packages/static/icons/**',
+      'packages/figma-plugin/src/generated/**',
+      'packages/figma-plugin/build/**',
       'preview/**',
     ],
   },
