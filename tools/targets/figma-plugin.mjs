@@ -1,14 +1,10 @@
-// packages/figma-plugin: icon geometry as SVG strings a Figma plugin can
-// insert with figma.createNodeFromSvg, embedded at build time so the
-// plugin makes no network request.
-//
-// figma.createNodeFromSvg does not reliably resolve stroke="currentColor",
-// so this target writes a solid default instead of the shared attributes
-// the static target uses.
+// packages/figma-plugin: icon geometry as SVG strings, embedded at build
+// time so the plugin makes no network request. Stroke is a solid color
+// instead of currentColor, which figma.createNodeFromSvg does not resolve.
 
 import { attributesOf, readAliases } from '../lib/icons.mjs';
 
-const STROKE = '#17130e'; // the "Ink" default from web/src/lib/color.ts
+const STROKE = '#17130e'; // Ink, from web/src/lib/color.ts
 
 const SVG_ATTRIBUTES = [
   'xmlns="http://www.w3.org/2000/svg"',

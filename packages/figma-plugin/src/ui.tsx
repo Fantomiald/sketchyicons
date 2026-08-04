@@ -11,9 +11,7 @@ const bundle = rawBundle as Bundle;
 const index: SearchIndex = { names: Object.keys(bundle.icons).sort(), aliases: bundle.aliases };
 const RESULT_LIMIT = 60;
 
-// The inserted node keeps a solid ink stroke regardless of theme, but the
-// preview in this panel should follow Figma's light/dark UI like every other
-// icon does, so it stays visible on a dark canvas theme too.
+// The preview follows Figma's UI theme; the inserted icon stays solid ink.
 const PREVIEW_STROKE = /stroke="#17130e"/;
 const previewOf = (name: string) =>
   (bundle.icons[name] ?? '').replace(PREVIEW_STROKE, 'stroke="currentColor"');
