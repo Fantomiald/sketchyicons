@@ -6,10 +6,11 @@ import type { Bundle, InsertIconHandler } from './types';
 const bundle = rawBundle as Bundle;
 
 export default function () {
-  on<InsertIconHandler>('INSERT_ICON', (iconName) => {
+  on<InsertIconHandler>('INSERT_ICON', async (iconName) => {
     const svg = bundle.icons[iconName];
     if (svg === undefined) return;
 
+    await figma.currentPage.loadAsync();
     const imported = figma.createNodeFromSvg(svg);
     const node = figma.flatten([imported], figma.currentPage);
     node.name = iconName;

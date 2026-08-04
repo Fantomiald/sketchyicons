@@ -16,6 +16,7 @@
     "name": "Sketchy Icons",
     "main": "src/main.ts",
     "ui": "src/ui.tsx",
+    "documentAccess": "dynamic-page",
     "networkAccess": {
       "allowedDomains": [
         "none"
