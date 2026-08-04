@@ -38,4 +38,15 @@ export default tseslint.config(
       },
     },
   },
+  {
+    // The figma-plugin UI compiles JSX through Preact's h() pragma (see
+    // packages/figma-plugin/tsconfig.json), not React's, so the parser needs
+    // telling or it marks the h import as unused.
+    files: ['packages/figma-plugin/**/*.tsx'],
+    languageOptions: {
+      parserOptions: {
+        jsxPragma: 'h',
+      },
+    },
+  },
 );
